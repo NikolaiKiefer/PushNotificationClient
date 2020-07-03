@@ -9,7 +9,7 @@ import {NewsletterService} from '../services/newsletter.service';
 })
 export class AppComponent {
   title = 'PushNotificationTest';
-  readonly VAPID_PUBLIC_KEY = 'BP6ztFRgF2D3v4-LEJv-kZ3azO3llpCuUokMCMQ9mA0eqfakLptwaY62aFB_xpowaSuJ6EKG8Mdo68zvZEEhT2M';
+  readonly VAPID_PUBLIC_KEY = 'BEbU8DBoKvvv7xUlioWcE-IS_EDNym4g6e3u2S97eX34G2WWOr6EZLFeS8bpokOWwcm-mEQlC10ey457l-9UDks';
 
   constructor(
     private swPush: SwPush,
@@ -22,5 +22,9 @@ export class AppComponent {
     })
       .then(sub => this.newsletterService.addPushSubscriber(sub).subscribe())
       .catch(err => console.error('Could not subscribe to notifications', err));
+  }
+
+  unsubscribeFromNotifications(){
+    this.swPush.unsubscribe().then(console.log);
   }
 }

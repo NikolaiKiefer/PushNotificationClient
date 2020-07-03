@@ -5,10 +5,12 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import {HttpClientModule} from '@angular/common/http';
+import { SubscriptionDisplayComponent } from './subscription-display/subscription-display.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SubscriptionDisplayComponent
   ],
   imports: [
     BrowserModule,

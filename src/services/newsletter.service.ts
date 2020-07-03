@@ -11,9 +11,6 @@ export class NewsletterService {
   }
 
   addPushSubscriber(sub: PushSubscription) {
-    console.log(sub);
-    let tmp = {id: 'dada',
-        subscription: sub};
-    return this.http.post('http://localhost:3000/subscribe', tmp);
+    return this.http.post('http://localhost:3000/subscribe', sub);
   }
 }
