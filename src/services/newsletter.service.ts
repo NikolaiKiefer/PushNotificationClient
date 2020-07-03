@@ -13,4 +13,8 @@ export class NewsletterService {
   addPushSubscriber(sub: PushSubscription) {
     return this.http.post('http://localhost:3000/subscribe', sub);
   }
+
+  sendPushRequest() {
+    return this.http.post('http://localhost:3000/push', {}).subscribe();
+  }
 }
